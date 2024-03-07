@@ -1,0 +1,16 @@
+.toolbar-icons {
+    flex: 1 1 auto;
+   }
+   .toolbar-icon {
+    padding-left: 8px;
+   }
+   .example-spacer {
+    flex: 1 1 auto;
+  }
+  #app {
+      position: absolute;
+    left: 48%;
+  }
+  .h1 { 
+text-align: center;
+  }

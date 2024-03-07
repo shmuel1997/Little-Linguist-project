@@ -1,0 +1,52 @@
+<form #form="ngForm" (ngSubmit)="saveCategory()">
+    <mat-form-field>
+        <mat-label>category name:</mat-label>
+        <input matInput [(ngModel)]="currentCategory.name" name="name" id="name" #inputName="ngModel" required>
+            <mat-error *ngIf="inputName.invalid"> {{getErrorText(inputName)}}</mat-error>      
+    </mat-form-field>
+
+<br>
+    <mat-form-field>
+        <mat-label>origin language:</mat-label>
+        <input matInput [(ngModel)]="currentCategory.origin" name="origin" id="origin" disabled>
+    </mat-form-field>
+    <br>
+
+    <mat-form-field>
+        <mat-label>target language:</mat-label>
+        <input matInput [(ngModel)]="currentCategory.target" name="target" id="target" disabled>
+    </mat-form-field>
+    <br>
+
+    <mat-label>words:</mat-label>
+    <br>
+
+<ul>
+    <li *ngFor="let word of currentCategory.words; let i=index;">
+        <mat-form-field>
+            <mat-label>origin word:</mat-label>
+            <input matInput [(ngModel)]="word.origin" name="wordOrigin{{i}}"
+            pattern="[a-zA-Z\s]*" id="wordOrigin{{i}}" required #inputWordOrigin="ngModel">
+            <mat-error *ngIf="inputWordOrigin.invalid"> {{getErrorText(inputWordOrigin)}}</mat-error>      
+
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>target word:</mat-label>
+            <input matInput [(ngModel)]="word.target" #inputWordTarget="ngModel"
+            pattern="[\u0590-\u05ea]*" name="wordTarget{{i}}" id="wordTarget{{i}}" required >
+            <mat-error *ngIf="inputWordTarget.invalid"> {{getErrorText(inputWordTarget)}}</mat-error>      
+
+        </mat-form-field>   
+        <button (click)="deleteWord(i)">delete</button> 
+    </li>
+</ul>
+    <div>
+        <button mat-raised-button color="primary" type="button" (click)="addNewWord()">+ Add new word</button>
+      </div>
+    <!-- <ul>
+        <li *ngFor=""></li>
+    </ul> -->
+
+    <p *ngIf="textErrorWords">must have a least one word  in a category!!</p>
+    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">save category</button>
+</form>

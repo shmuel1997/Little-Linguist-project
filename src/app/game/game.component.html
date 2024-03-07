@@ -1,0 +1,26 @@
+<ul>
+    <li *ngFor="let word of categoryForCheck.words; let i=index;">
+        <mat-form-field>
+            <mat-label>origin word:</mat-label>
+            <input matInput [(ngModel)]="word.origin"  name="wordOrigin{{i}}" 
+            id="wordOrigin{{i}}" disabled>
+
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>target word:</mat-label>
+            <input matInput [(ngModel)]="word.target" 
+             name="wordTarget{{i}}" id="wordTarget{{i}}"  >
+
+        </mat-form-field>   
+
+<span *ngIf="wordResult[i]==true"><mat-icon>done</mat-icon></span>
+<span *ngIf="wordResult[i]==false"><mat-icon>clear</mat-icon></span>
+<span *ngIf="translationFlag">{{translionWords[i].target}}</span>
+    </li>
+</ul>
+
+<button mat-raised-button color="primary"  (click)="correctTranslation()">translate</button>
+
+<span *ngIf="correctlyWordsMone!=wordResult.length">
+    You tranlated {{correctlyWordsMone}} out of {{categoryForCheck.words.length}} words correctly ,try again</span>
+<button mat-raised-button color="primary"  (click)="testWords()">check</button>

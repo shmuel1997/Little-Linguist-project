@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+    
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item [routerLink]="['']">מצב ניהול</button>
+  <button mat-menu-item [routerLink]="['selectCategory']">מצב משחק</button>
+</mat-menu>
+<h1>Little Linguist</h1>
+
+    <div class="toolbar-icons"></div>
+    <mat-icon class="toolbar-icon">account_circle</mat-icon>
+   </mat-toolbar>
