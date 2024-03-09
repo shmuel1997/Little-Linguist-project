@@ -22,20 +22,7 @@ export class CategoryTableComponent implements OnInit{
   categories:Category[]=[];
   sortedData: Category[]=[];
   constructor(private categoryService:CategoryService,private dialog:MatDialog){
-   /*  let c1=new Category("animal",0)
-    c1.addPair('cat', 'חתול')
-    this.categories.push(c1)
-    let c2=new Category("fruit",1)
-    c2.addPair('apple', 'תפוח')
-    this.categories.push(c2)
-    let c3=new Category("ourbody",2)
-    c3.addPair('leg', 'רגל')
-    this.categories.push(c3)
-    let c4=new Category("vegetable",3)
-    c4.addPair('potato', 'תפוח אדמה')
-    this.categories.push(c4) */
-  
-  
+   
   
   }
 ngOnInit(): void {

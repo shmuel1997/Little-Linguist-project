@@ -32,11 +32,7 @@ private setCategories(categories : Map<number, Category>) : void {
 
 
 
-/*  (1,{
-  id:1,
-  name:game,
-  
-}) */
+
  private getCategories() : Map<number, Category>{
   let categoryString = localStorage.getItem(this.CATEGORIES_KEY);
   let idOfCategory = new Map<number, Category>();
@@ -81,8 +77,7 @@ this.setCategories(categoriesMap);
 
 
 
-//this.categories.set(this.nextId, newCategoryData);
-//this.setNextId()
+
 
 
 this.setNextId(++nextId);
@@ -106,11 +101,7 @@ deleteCategory(deleteCategory:Category){
 
 
 
-//if(this.categories.get(deleteCategory.id))
 
-
-//this.categories.delete(deleteCategory.id);
-//localStorage.
 
 }
 updateCategory(updateCategory:Category){

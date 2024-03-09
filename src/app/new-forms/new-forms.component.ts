@@ -28,7 +28,7 @@ constructor(private categoryService:CategoryService,private router:Router) {
 }
 ngOnInit(): void {
 let idCategory=parseInt(this.idCategory);
-//let category=this.categoryService.getCategory(idCategory);
+
 if(idCategory!=this.categoryService.getAllCategory().length)
 this.currentCategory=this.categoryService.getCategory(idCategory);
 else
